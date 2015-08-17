@@ -1,0 +1,14 @@
+import signal
+from time import sleep
+
+# Define signal handler function
+def myHandler(signum, frame):
+    print("Now, it's the time")
+    exit()
+
+# register signal.SIGALRM's handler 
+signal.signal(signal.SIGALRM, myHandler)
+signal.alarm(5)
+while True:
+    print('not yet')
+    sleep(1)
